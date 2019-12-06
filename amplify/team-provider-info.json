@@ -1,0 +1,19 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-encontrados-dev-233952-authRole",
+            "UnauthRoleArn": "arn:aws:iam::631597059447:role/amplify-encontrados-dev-233952-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::631597059447:role/amplify-encontrados-dev-233952-authRole",
+            "Region": "eu-west-1",
+            "DeploymentBucketName": "amplify-encontrados-dev-233952-deployment",
+            "UnauthRoleName": "amplify-encontrados-dev-233952-unauthRole",
+            "StackName": "amplify-encontrados-dev-233952",
+            "StackId": "arn:aws:cloudformation:eu-west-1:631597059447:stack/amplify-encontrados-dev-233952/27994320-17b0-11ea-9c0f-0a0af0d573f8"
+        },
+        "categories": {
+            "auth": {
+                "encontrados2b97beb4": {}
+            }
+        }
+    }
+}

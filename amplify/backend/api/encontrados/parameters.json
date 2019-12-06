@@ -1,0 +1,11 @@
+{
+    "AppSyncApiName": "encontrados",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": "false",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authencontrados2b97beb4",
+            "Outputs.UserPoolId"
+        ]
+    }
+}
