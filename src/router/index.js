@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Profile from '../components/Profile.vue'
 import {
   components,
   AmplifyEventBus,
@@ -16,9 +17,9 @@ let user
 
 getUser().then((user, error) => {
   if (user) {
-    router.push({
-      path: '/'
-    })
+    // router.push({
+    //   path: '/'
+    // })
   }
 })
 
@@ -28,12 +29,12 @@ AmplifyEventBus.$on('authState', async (state) => {
     AmplifyStore.commit('setUser', null)
     router.push({
       path: '/auth'
-    })
+    }).catch(() => {})
   } else if (state === 'signedIn') {
     user = await getUser()
     router.push({
       path: '/'
-    })
+    }).catch(() => {})
   }
 })
 
@@ -55,14 +56,22 @@ const routes = [
     name: 'home',
     component: Home,
     meta: {
+      requiresAuth: false
+    }
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: Profile,
+    meta: {
       requiresAuth: true
     }
   },
   {
-    path: '/about',
-    name: 'about',
+    path: '/signin',
+    name: 'signin',
     meta: {
-      requiresAuth: true
+      requiresAuth: false
     },
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
